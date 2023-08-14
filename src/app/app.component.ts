@@ -92,7 +92,7 @@ export class AppComponent {
     font: {
       color: '#a6a6a6'
     },
-    
+
     xaxis: {
       domain: [0.1, 1],
       showgrid: false,
@@ -138,6 +138,7 @@ export class AppComponent {
       range: [0, 5],
       showgrid: false,
       overlaying: 'y',
+      side: 'left',
       position: 0.03,
       tickwidth: 0.6,
       tickangle: -90,
@@ -353,8 +354,13 @@ export class AppComponent {
       },
     ]
   }
+  config = {
+    scrollZoom: true,
+    responsive: true
+  }
   public graph = {
     data: [this.trace1, this.trace2, this.trace3, this.trace4, this.trace5, this.trace6, this.trace7],
-    layout: this.layout
+    layout: this.layout,
+    config: this.config,
   }
 }
