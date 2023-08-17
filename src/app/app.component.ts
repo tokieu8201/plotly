@@ -40,20 +40,7 @@ export class AppComponent {
       shape: 'vh'
     }
   };
-  // trace3 = {
-  //   x: data.data3.x,
-  //   y: data.data3.y,
-  //   mode: 'lines+markers',
-  //   yaxis: 'y2',
-  //   line: {
-  //     width: 0.6,
-  //     color: 'red',
-  //     shape: 'vh'
-  //   },
-  //   marker: {
-  //     color: 'red'
-  //   }
-  // };
+
   trace4 = {
     x: data.data4.x,
     y: data.data4.y,
@@ -378,62 +365,5 @@ export class AppComponent {
     layout: this.layout,
     config: this.config,
   }
-
-  initialColors: string[] = [
-    this.trace1.line.color,
-    this.trace2.line.color,
-    this.trace3.line.color,
-    this.trace4.line.color,
-    this.trace5.line.color,
-    this.trace6.line.color,
-    this.trace7.line.color,
-  ]
-  //event
-  onClick(event: any){
-    //console.log('click');
-    if (event.points) {
-      for (let i = 0; i < event.points.length; i++) {
-        const point = event.points[i];
-        if (point.curveNumber === 1) {
-          //point.data.line.color = 'green';
-          const initialColor = this.initialColors[1];
-          if(point.data.line.color === 'green'){
-            point.data.line.color = initialColor;
-          } else{
-            point.data.line.color = 'green';
-          }
-        }
-      }
-    }
-  }
-
-  // onHover(event: any){
-  //   if (event.points) {
-  //     var pointIndex = '', tn = '', colors: any = [];
-  //     for (let i = 0; i < event.points.length; i++) {
-  //       const point = event.points[i];
-  //       if (point.curveNumber === 2) {
-
-  //         const pointIndex = point.pointNumber;
-  //         const tn = point.curveNumber;
-
-  //         //if (pointIndex >= 0 && pointIndex < this.trace3.x.length) {
-  //           //this.trace3.marker.color = 'pink';
-  //           colors = event.points[i].trace3.marker.color;
-  //         //}
-  //         colors[pointIndex] = 'pink'
-  //       }
-  //     }
-  //   }
-
-  //   if(event.points){
-  //     for(let i = 0; i < event.points.length; i++){
-  //       var pn = '', tn = '', color = [];
-  //       pn = event.points[i].pointNumber;
-  //       tn = event.points[i].curveNumber;
-
-  //     }
-  //   }
-  // }
 
 }
